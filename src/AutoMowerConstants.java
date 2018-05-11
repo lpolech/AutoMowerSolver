@@ -43,7 +43,7 @@
 /* 43 */       for (int i = 0; i < this.contents.length; i++) {
 /* 44 */         if (this.contents[i][0].equals(paramString)) {
 /* 45 */           if (this.contents[i][1].getClass().isInstance(paramObject)) {
-/* 46 */             this.contents[i] = { paramString, paramObject };
+/* 46 */             this.contents[i] = new Object[]{ paramString, paramObject };
 /* 47 */             resetDimensions();
 /* 48 */             return true;
 /*    */           }
@@ -67,9 +67,9 @@
 /*    */     
 /*    */     private void resetDimensions()
 /*    */     {
-/* 70 */       this.contents[0] = { "ScreenSize", new Dimension(getInt("ScreenWidth").intValue(), getInt("ScreenHeight").intValue()) };
-/* 71 */       this.contents[1] = { "FieldSize", new Dimension(getInt("FieldWidth").intValue(), getInt("FieldHeight").intValue()) };
-/* 72 */       this.contents[2] = { "MowerBox", new Rectangle(0, 0, getInt("MowerWidth").intValue(), getInt("MowerHeight").intValue()) };
+/* 70 */       this.contents[0] = new Object[]{ "ScreenSize", new Dimension(getInt("ScreenWidth").intValue(), getInt("ScreenHeight").intValue()) };
+/* 71 */       this.contents[1] = new Object[]{ "FieldSize", new Dimension(getInt("FieldWidth").intValue(), getInt("FieldHeight").intValue()) };
+/* 72 */       this.contents[2] = new Object[]{ "MowerBox", new Rectangle(0, 0, getInt("MowerWidth").intValue(), getInt("MowerHeight").intValue()) };
 /*    */     }
 /*    */     
 /*    */     public Integer getInt(String paramString)

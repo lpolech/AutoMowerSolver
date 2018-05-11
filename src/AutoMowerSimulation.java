@@ -172,7 +172,7 @@
 /* 172 */         this.myField.mark(i, (int)this.myField.getHeight() - j);
 /*     */       }
 /*     */     }
-/* 175 */     for (i = 0; i < this.myField.getHeight(); i++) {
+/* 175 */     for (int i = 0; i < this.myField.getHeight(); i++) {
 /* 176 */       for (j = 0; j < 5; j++) {
 /* 177 */         this.myField.mark(j, i);
 /* 178 */         this.myField.mark((int)this.myField.getWidth() - j, i);

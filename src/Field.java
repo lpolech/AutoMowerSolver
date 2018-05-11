@@ -5,7 +5,7 @@
 /*     */   private boolean[][] myMarkings;
 /*     */   private int myTotalMarks;
 /*     */   private Field.FieldPanel myPanel;
-/*     */   
+/*     */
 /*     */   public static class FieldPanel extends javax.swing.JPanel
 /*     */   {
 /*     */     private Field myParent;
@@ -33,9 +33,9 @@
 /*  33 */       localGraphics.fillRect(paramInt1, paramInt2, 1, 1);
 /*     */     }
 /*     */   }
-/*     */   
-/*     */ 
-/*     */ 
+/*     */
+/*     */
+/*     */
 /*     */ 
 /*     */ 
 /*     */ 
@@ -71,8 +71,8 @@
 /*     */   {
 /*  72 */     int i = 0;
 /*  73 */     for (boolean[] arrayOfBoolean1 : this.myMarkings) {
-/*  74 */       for (int i1 : arrayOfBoolean1) {
-/*  75 */         if (i1 != 0) {
+/*  74 */       for (boolean i1 : arrayOfBoolean1) {
+/*  75 */         if (i1) {
 /*  76 */           i++;
 /*     */         }
 /*     */       }
@@ -82,9 +82,9 @@
 /*     */   
 /*     */   public boolean mark(int paramInt1, int paramInt2)
 /*     */   {
-/*  85 */     if ((contains(paramInt1, paramInt2)) && (this.myMarkings[paramInt1][paramInt2] == 0)) {
+/*  85 */     if ((contains(paramInt1, paramInt2)) && (!this.myMarkings[paramInt1][paramInt2])) {
 /*  86 */       this.myTotalMarks += 1;
-/*  87 */       this.myMarkings[paramInt1][paramInt2] = 1;
+/*  87 */       this.myMarkings[paramInt1][paramInt2] = true;
 /*  88 */       if (this.myPanel != null) {
 /*  89 */         this.myPanel.mark((int)getX() + paramInt1, (int)getY() + paramInt2);
 /*     */       }
@@ -149,7 +149,7 @@
 /* 149 */     int i = this.myTotalMarks;
 /* 150 */     for (int j = 0; (j < this.myMarkings.length) && (i > 0); j++) {
 /* 151 */       for (int k = 0; (k < this.myMarkings[j].length) && (i > 0); k++) {
-/* 152 */         if (this.myMarkings[j][k] != 0) {
+/* 152 */         if (this.myMarkings[j][k]) {
 /* 153 */           paramGraphics.fillRect((int)getX() + j, (int)getY() + k, 1, 1);
 /* 154 */           i--;
 /*     */         }
